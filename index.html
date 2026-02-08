@@ -2,7 +2,14 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Audit Hervé">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#8b5cf6">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
   <title>Audit Flow-IA - Hervé</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -536,40 +543,37 @@
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold mb-2">Décomposer la Tâche : La Méthode T.A.R.D.</h3>
                       <p className={`mb-4 ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
-                        Pour chaque action répétitive identifiée, essayez de remplir ces quatre colonnes :
+                        Pour chaque action répétitive identifiée, essayez de remplir ces quatre éléments :
                       </p>
-                      <div className="overflow-x-auto">
-                        <table className="w-full text-sm">
-                          <thead>
-                            <tr className={darkMode ? 'text-slate-300' : 'text-slate-700'}>
-                              <th className="text-left py-2 px-3 font-semibold">Élément</th>
-                              <th className="text-left py-2 px-3 font-semibold">Description</th>
-                              <th className="text-left py-2 px-3 font-semibold">Exemple concret</th>
-                            </tr>
-                          </thead>
-                          <tbody className={darkMode ? 'text-slate-400' : 'text-slate-600'}>
-                            <tr className={darkMode ? 'border-t border-slate-700' : 'border-t border-slate-200'}>
-                              <td className="py-2 px-3"><span className="font-medium text-amber-400">⚡ Trigger</span></td>
-                              <td className="py-2 px-3">Qu'est-ce qui lance l'action ?</td>
-                              <td className="py-2 px-3 italic">Réception d'un email de facture</td>
-                            </tr>
-                            <tr className={darkMode ? 'border-t border-slate-700' : 'border-t border-slate-200'}>
-                              <td className="py-2 px-3"><span className="font-medium text-emerald-400">🎯 Action</span></td>
-                              <td className="py-2 px-3">Que faites-vous concrètement ?</td>
-                              <td className="py-2 px-3 italic">Télécharger le PDF et le renommer</td>
-                            </tr>
-                            <tr className={darkMode ? 'border-t border-slate-700' : 'border-t border-slate-200'}>
-                              <td className="py-2 px-3"><span className="font-medium text-violet-400">💭 Réflexion</span></td>
-                              <td className="py-2 px-3">Devez-vous réfléchir/choisir ?</td>
-                              <td className="py-2 px-3 italic">Vérifier si le montant correspond au devis</td>
-                            </tr>
-                            <tr className={darkMode ? 'border-t border-slate-700' : 'border-t border-slate-200'}>
-                              <td className="py-2 px-3"><span className="font-medium text-rose-400">📍 Destination</span></td>
-                              <td className="py-2 px-3">Où va l'information à la fin ?</td>
-                              <td className="py-2 px-3 italic">Déposé dans le dossier Google Drive 'Compta'</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                      <div className="space-y-3">
+                        <div className={`p-3 rounded-xl ${darkMode ? 'bg-slate-900/50' : 'bg-white/50'}`}>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="font-medium text-amber-400">⚡ Trigger</span>
+                          </div>
+                          <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>Qu'est-ce qui lance l'action ?</p>
+                          <p className={`text-xs italic mt-1 ${darkMode ? 'text-slate-500' : 'text-slate-400'}`}>Ex: Réception d'un email de facture</p>
+                        </div>
+                        <div className={`p-3 rounded-xl ${darkMode ? 'bg-slate-900/50' : 'bg-white/50'}`}>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="font-medium text-emerald-400">🎯 Action</span>
+                          </div>
+                          <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>Que faites-vous concrètement ?</p>
+                          <p className={`text-xs italic mt-1 ${darkMode ? 'text-slate-500' : 'text-slate-400'}`}>Ex: Télécharger le PDF et le renommer</p>
+                        </div>
+                        <div className={`p-3 rounded-xl ${darkMode ? 'bg-slate-900/50' : 'bg-white/50'}`}>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="font-medium text-violet-400">💭 Réflexion</span>
+                          </div>
+                          <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>Devez-vous réfléchir/choisir ?</p>
+                          <p className={`text-xs italic mt-1 ${darkMode ? 'text-slate-500' : 'text-slate-400'}`}>Ex: Vérifier si le montant correspond au devis</p>
+                        </div>
+                        <div className={`p-3 rounded-xl ${darkMode ? 'bg-slate-900/50' : 'bg-white/50'}`}>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="font-medium text-rose-400">📍 Destination</span>
+                          </div>
+                          <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>Où va l'information à la fin ?</p>
+                          <p className={`text-xs italic mt-1 ${darkMode ? 'text-slate-500' : 'text-slate-400'}`}>Ex: Déposé dans Google Drive 'Compta'</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -678,6 +682,11 @@
 
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(<App />);
+    
+    // Register Service Worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    }
   </script>
 </body>
 </html>
